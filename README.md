@@ -6,7 +6,13 @@
 
 ![Wazuh](https://img.shields.io/badge/Wazuh-4.14.9-005CB9) ![Ubuntu](https://img.shields.io/badge/Ubuntu_Server-24.04.5-E95420) ![Host](https://img.shields.io/badge/Host-Windows_11-0078D4)
 
-By **custome npc**
+</div>
+
+<div align="center">
+  <p><em>documented by</em> <span style="font-family: 'Brush Script MT', cursive, sans-serif; font-size: 1.4em; font-weight: bold;">custome npc💻</span></p>
+</div>
+
+<br>
 
 **Prep ➜ VM ➜ Ubuntu ➜ Wazuh ➜ Agent ➜ Sysmon ➜ First detection**
 
@@ -144,7 +150,7 @@ Type `yes` to accept the fingerprint. Run everything from here over SSH.
 
 > ✅ `df -h /` shows about 57 GB, and you have an SSH prompt where paste works. If it shows much less: [fix](docs/troubleshooting/04-disk-smaller-than-60gb.md).
 
-## 5. Install Wazuh
+## 5. Install Wazuh on the server 
 
 ```bash
 curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
