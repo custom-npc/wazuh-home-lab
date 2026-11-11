@@ -55,7 +55,7 @@ One laptop. The Wazuh server lives in a VM. The Windows host is the machine bein
 
 | Port | Protocol | Direction | What it's for |
 |---|---|---|---|
-| 22 | TCP | Windows ➜ VM | SSH, so copy-paste works |
+| 22 | TCP | Windows ➜ VM | SSH |
 | 443 | TCP | Browser ➜ VM | Dashboard |
 | 1514 | **TCP** | Agent ➜ VM | Agent events. I run it on TCP. UDP bit me, see Phase 9 |
 | 1515 | TCP | Agent ➜ VM | The agent asking the manager for its key |
