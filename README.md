@@ -94,7 +94,7 @@ Tested with Wazuh 4.14.9, Ubuntu Server 24.04.5 LTS, VirtualBox with Extension P
 
 > 💡 Skipping the unattended install is correct. It means you install Ubuntu yourself.
 
-> 💡 Use Bridged, not Host-Only. Mine never worked: [why](docs/troubleshooting/02-host-only-adapter-missing.md).
+> 💡 Use Bridged.
 
 ## 3. Install Ubuntu
 
