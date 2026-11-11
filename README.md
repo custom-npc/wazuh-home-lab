@@ -1,3 +1,5 @@
+<div align="center">
+
 # Wazuh Home Lab
 
 *A working SIEM on one Windows laptop. No second machine, no budget.*
