@@ -148,18 +148,6 @@ Type `yes` to accept the fingerprint. Run everything from here over SSH.
 curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
 ```
 
-What my run looked like:
-
-| Stage | Took |
-|---|---|
-| Indexer | ~36 min |
-| Manager | ~15 min |
-| Filebeat | ~2 min |
-| Dashboard | ~18 min |
-| **Total** | **~70 min** |
-
-> 💡 It looks frozen at the indexer step. It isn't: [how to check](docs/troubleshooting/05-installer-looks-frozen.md).
-
 > ⚠️ The installer prints the `admin` password at the end. Save it now. If you lose it: [recover it](docs/troubleshooting/06-lost-admin-password.md).
 
 Stop surprise upgrades by disabling the Wazuh apt repo:
