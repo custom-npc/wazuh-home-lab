@@ -106,7 +106,7 @@ Boot the ISO and go through the installer:
 | Network | Left DHCP on |
 | Proxy | Blank, then Done |
 | Storage | Entire disk, default LVM |
-| Profile | Server name `<VM_NAME>`, user `<UBUNTU_USER>`, strong password |
+| Profile | Server name `<VM_NAME>`, user `<UBUNTU_USER>`, password |
 | SSH | **Tick Install OpenSSH server**, no key import |
 | Server Snaps | Nothing, then Done |
 
