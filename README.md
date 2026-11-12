@@ -219,10 +219,14 @@ Restart-Service WazuhSvc
 
 ## 8. First detection
 
-Time to prove it works.
+1. On the Windows machine, open **PowerShell as Administrator**.
+2. Run this a few times to generate failed logons against the local machine. Each run is one failed authentication attempt with a fake user:
 
-1. Sign out of Windows. On the sign-in screen, type a **wrong password** once, then sign back in properly.
-2. In the dashboard open the **Events** view. If it's empty, widen the time range from 15 minutes to **Today**.
+```powershell
+net use \\127.0.0.1\IPC$ /user:fakeuser wrongpass
+```
+
+3. In the dashboard open the **Events** view. If it's empty, widen the time range from 15 minutes to **Today**.
 3. Search for the failed logon:
 
 ```text
@@ -237,9 +241,7 @@ data.win.system.providerName:Microsoft-Windows-Sysmon
 
 > ✅ You see Sysmon events and a rule 60122 failed-logon alert. Mine fired at level 5.
 
-[screenshot: Events view showing the failed-logon alert and Sysmon events — redact: agent name, usernames, IP]
-
-> 💡 Search warning about Lucene and DQL: [fix](docs/troubleshooting/08-dql-lucene-warning.md). Blank Events view: [fix](docs/troubleshooting/09-events-view-blank.md). Laggy VM: [fix](docs/troubleshooting/10-vm-and-dashboard-laggy.md).
+> 💡 Search warning about Lucene and DQL: [fix](docs/troubleshooting/05-dql-lucene-warning.md). Blank Events view: [fix](docs/troubleshooting/06-events-view-blank.md). 
 
 ---
 
