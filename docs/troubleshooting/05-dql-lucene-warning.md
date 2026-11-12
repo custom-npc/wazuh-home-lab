@@ -14,6 +14,6 @@ data.win.system.providerName:Microsoft-Windows-Sysmon
 
 2. Or switch the query-language dropdown to Lucene.
 
-> 💡 If the Events view goes blank after switching to Lucene, see [the blank Events view](09-events-view-blank.md).
+> 💡 If the Events view goes blank after switching to Lucene, see [the blank Events view](06-events-view-blank.md).
 
 [Back to the guide](../../README.md#8-first-detection)
