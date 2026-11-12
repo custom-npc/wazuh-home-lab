@@ -67,16 +67,16 @@ Tested with Wazuh 4.14.9, Ubuntu Server 24.04.5 LTS, VirtualBox with Extension P
 
 ## The path
 
-| # | Step | Time |
-|---|---|---|
-| 1 | [Prep the laptop](#1-prep-the-laptop) | A few minutes + a 3.8 GB download |
-| 2 | [Create the VM](#2-create-the-vm) | A few minutes |
-| 3 | [Install Ubuntu](#3-install-ubuntu) | A short install |
-| 4 | [Connect over SSH](#4-connect-over-ssh) | A few minutes |
-| 5 | [Install Wazuh](#5-install-wazuh) | **About 70 minutes** |
-| 6 | [Deploy the agent](#6-deploy-the-agent) | About a minute to show up |
-| 7 | [Add Sysmon](#7-add-sysmon) | A few minutes |
-| 8 | [First detection](#8-first-detection) | A few minutes |
+| # | Step |
+|---|---|
+| 1 | [Prep the laptop](#1-prep-the-laptop) | 
+| 2 | [Create the VM](#2-create-the-vm) |
+| 3 | [Install Ubuntu](#3-install-ubuntu) |
+| 4 | [Connect over SSH](#4-connect-over-ssh) | 
+| 5 | [Install Wazuh on the server ](#5-install-wazuh-on-the-server) | 
+| 6 | [Deploy the agent](#6-deploy-the-agent) | 
+| 7 | [Add Sysmon](#7-add-sysmon) | 
+| 8 | [First detection](#8-first-detection) |
 
 ---
 
@@ -128,7 +128,7 @@ At the VM console, find the IP. This is your `<WAZUH_SERVER_IP>`:
 ip a
 ```
 
-> 💡 Paste doesn't work in the VirtualBox console, so type the next command by hand: [why](docs/troubleshooting/03-cant-paste-in-vm-console.md).
+> 💡 Paste doesn't work in the VirtualBox console, so type the next command by hand: [why](docs/troubleshooting/02-cant-paste-in-vm-console.md).
 
 Ubuntu only uses part of the disk by default. Claim all of it:
 
@@ -148,7 +148,7 @@ ssh <UBUNTU_USER>@<WAZUH_SERVER_IP>
 
 Type `yes` to accept the fingerprint. Run everything from here over SSH.
 
-> ✅ `df -h /` shows about 57 GB, and you have an SSH prompt where paste works. If it shows much less: [fix](docs/troubleshooting/04-disk-smaller-than-60gb.md).
+> ✅ `df -h /` shows about 57 GB, and you have an SSH prompt where paste works. If it shows much less: [fix](docs/troubleshooting/03-disk-smaller-than-60gb.md).
 
 ## 5. Install Wazuh on the server 
 
@@ -156,7 +156,7 @@ Type `yes` to accept the fingerprint. Run everything from here over SSH.
 curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
 ```
 
-> ⚠️ The installer prints the `admin` password at the end. Save it now. If you lose it: [recover it](docs/troubleshooting/06-lost-admin-password.md).
+> ⚠️ The installer prints the `admin` password at the end. Save it now. If you lose it: [recover it](docs/troubleshooting/04-lost-admin-password.md).
 
 Stop surprise upgrades by disabling the Wazuh apt repo:
 
@@ -185,8 +185,7 @@ In your Windows browser open `https://<WAZUH_SERVER_IP>`, accept the certificate
 NET START WazuhSvc
 ```
 
-> ✅ `<AGENT_NAME>` shows **Active** within about a minute. If it says Never connected: [fix 1](docs/troubleshooting/11-agent-never-connected-stale-key.md), [fix 2](docs/troubleshooting/12-agent-never-connected-udp-vs-tcp.md).
-
+> ✅ In the dashboard `<AGENT_NAME>` shows **Active** within about a minute. If it says disconnected: wait about 2 min and refresh 
 ## 7. Add Sysmon
 
 In **Administrator PowerShell**, download Sysmon and the SwiftOnSecurity config:
@@ -202,8 +201,6 @@ Install it:
 ```powershell
 & "$env:tmp\Sysmon\Sysmon64.exe" -accepteula -i "$env:tmp\sysmonconfig.xml"
 ```
-
-> 💡 The command has to start with `& "`. A parse error means that part is missing: [fix](docs/troubleshooting/07-sysmon-powershell-parse-error.md).
 
 Open `C:\Program Files (x86)\ossec-agent\ossec.conf` in an editor **run as Administrator**. Inside `<ossec_config>` add:
 
