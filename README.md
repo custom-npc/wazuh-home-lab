@@ -226,7 +226,7 @@ Restart-Service WazuhSvc
 net use \\127.0.0.1\IPC$ /user:fakeuser wrongpass
 ```
 
-3. In the dashboard open the **Events** view. If it's empty, widen the time range from 15 minutes to **Today**.
+3. In the Threat intelligence ➜ Threat hunting open the **Events** view. If it's empty, widen the time range from 15 minutes to **Today**.
 3. Search for the failed logon:
 
 ```text
