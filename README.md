@@ -2,6 +2,10 @@
 
 # Wazuh Home Lab
 
+<div align="center">
+  <img src="assets/screenshots/cover.png" alt="Wazuh Home Lab Cover" width="100%">
+</div>
+
 *A working SIEM on one Windows laptop. No second machine, no budget.*
 
 ![Wazuh](https://img.shields.io/badge/Wazuh-4.14.9-005CB9) ![Ubuntu](https://img.shields.io/badge/Ubuntu_Server-24.04.5-E95420) ![Host](https://img.shields.io/badge/Host-Windows_11-0078D4)
