@@ -51,6 +51,8 @@ rule.id:92057
 
 > ✅ `rule.id:92057` fires at level 12, with the encoded command visible in `commandLine` and the MITRE tag T1059.001. This is a Wazuh built-in rule. No custom rule was needed.
 
+[see](../../assets/screenshots/powershell-encoded-command-92057.png)
+
 Then confirm the script block log itself is reaching the manager. Switch to `wazuh-archives-*` and search:
 
 ```text
