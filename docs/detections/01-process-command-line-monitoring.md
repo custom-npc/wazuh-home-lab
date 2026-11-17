@@ -73,6 +73,7 @@ In the dashboard, open **Threat Hunting ➜ Events**, set the time range to **To
 ```text
 rule.id:100201
 ```
+[see](../../assets/screenshots/121419.png)
 
 > ✅ You see the `bitsadmin` event with `rule.level: 12`, the full `commandLine` including the URL, the parent process (`powershell.exe`), and the MITRE tag T1105. The alert also carries `"mail": true`, so it will flow into any email or integration you add later.
 
